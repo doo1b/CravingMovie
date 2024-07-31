@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Box</title>
+    <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+    <!-- GNB -->
+    <header id="header">
+        <div class="inner">
+            <h1 class="logo">Movie Box</h1>
+            <nav class="nav">
+                <ul class="gnb_list">
+                    <li><a href="">최신 영화</a></li>
+                    <li><a href="">인기 영화</a></li>
+                    <li><a href="">개봉 예정 영화</a></li>
+                </ul>
+            </nav>
+            <div class="search">
+                <input type="text" id="search-input" placeholder="영화 제목을 입력하세요." onkeyup="enterkey()"/>
+                <button id="search-button">검색</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 캐러셀 테스트 -->
+    <section>
+        <div id="banner" class="swiper-container banner">
+            <div class="main01-nav">
+                <button type="button" class="btn-pause"></button>
+                <!-- 페이지네이션 버튼 -->
+                <div calss="swiper-pagination swiper-pagination-bullets">
+                    <span class="swiper-pagination-bullet"></span>
+                    <span class="swiper-pagination-bullet"></span>
+                    <span class="swiper-pagination-bullet"></span>
+                    <span class="swiper-pagination-bullet"></span>
+                </div>
+            </div>
+            <!-- 페이지 화살표 버튼 -->
+             <button type="button" class="swiper-button-prev" tabindex="0">이전</button>
+             <button type="button" class="swiper-button-next" tabindex="0">다음</button>
+             <!-- swiper -->
+              <div class="swiper-wrapper-banner">
+                <div class="swiper-slide">
+                    <img src="https://image.tmdb.org/t/p/original/etj8E2o0Bud0HkONVQPjyCkIvpv.jpg" alt="/" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://image.tmdb.org/t/p/original/10mvZdPGxwZcPcmkJYtuyiIYvY.jpg" alt="/" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://image.tmdb.org/t/p/original/cJ5h0tBjGFYWh8kAWqfcl8JKAhv.jpg" alt="/" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://image.tmdb.org/t/p/original/Aa9TLpNpBMyRkD8sPJ7ACKLjt0l.jpg" alt="/" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://image.tmdb.org/t/p/original/r5eDsfdzo4KuePfG7IVf5tDSoBx.jpg" alt="/" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://image.tmdb.org/t/p/original/4OBMHVP4Rjwn2DHoY80O31Hg3u0.jpg" alt="/" />
+                </div>
+              </div>
+        </div>
+    </section>
+
+    <!-- 개봉 예정작 -->
+    <div class="soon-body">
+        <div class="slide-box">
+            <h1>개봉 예정작</h1>
+            <div id="soon-movie-container" class="soon-cards">
+            </div>
+        </div>
+    </div>
+
+    <!-- 인기 영화 -->
+    <div class="popular-body">
+        <div id="popular-movie-container" class="popular-cards">
+        </div>
+    </div>
+    <button id="top-btn" onclick="toTop()">▲<br>Top</button>
+    <script src="./movies.js"></script>
+</body>
+
+</html>
