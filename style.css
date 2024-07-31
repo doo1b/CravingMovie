@@ -22,56 +22,67 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #42abae;
 }
 
 .titleLogo {
-  margin-left: 30px;
-  font-weight: 900;
-  font-size: 3vh;
+  margin-left: 100px;
 }
 
 .search {
-  display: inline-block;
-  margin-right: 30px;
+  display: flex;
+  margin-right: 80px;
+  align-items: center;
 }
 
 #search-input {
-  width: 150px;
+  background-color: transparent;
+  border: none;
+  width: 140px;
+  height: 70px;
+  background-image: url("data:image/svg+xml,%3Csvg width='150' height='67' viewBox='0 0 186 67' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M175.161 9.8272C169.062 9.8272 162.594 11.8874 156.162 11.8874C147.539 11.8874 139.019 11.1315 130.409 10.6284C115.962 9.78406 101.373 10.564 86.9736 9.25492C72.6833 7.95581 58.395 6.81711 44.11 5.47789C38.4335 4.94572 33.1077 3.64661 27.4567 3.64661C21.947 3.64661 17.0015 4.93883 11.4902 5.7068C10.39 5.86011 4.24992 5.72972 4.16503 7.767C3.87597 14.7045 4.16503 21.7119 4.16503 28.6551C4.16503 34.6876 1.6158 49.7209 6.68305 54.0642C10.7189 57.5236 20.8328 56.6136 25.7971 56.9829C42.4841 58.224 59.3176 58.8756 75.9286 60.8171C99.7755 63.6044 123.959 62.1464 147.921 62.3623C154.387 62.4205 160.795 63.3257 167.264 63.3924C169.024 63.4105 174.107 64.3327 175.619 62.8201C178.123 60.3168 178.591 47.2401 179.053 43.5916C179.977 36.2957 180.815 28.9261 181.399 21.6161C181.694 17.9362 183.496 11.9343 179.282 9.8272' stroke='%23fbbc14' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  padding-left: 10px;
 }
 
-/* 개봉 예정작 */
+#search-input:focus {
+  outline: none;
+}
 
+.search-button {
+  background-color: transparent;
+  border: none;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+}
+
+/* 영화 카드들 부분 */
 .categoryTitle {
   font-size: 2vh;
-  margin: 0 0 0 85px;
+  margin: 20px 0 -40px 105px;
 }
 
-.upcommingBody {
+.movieBody {
   width: auto;
   margin-top: 150px;
 }
 
-.upcommingCntainer {
-  margin-bottom: 50px;
+.Container {
+  margin: 0;
   height: 500px;
   display: flex;
   flex-direction: row;
   align-items: center;
   overflow-x: scroll;
-  padding-left: 70px;
+  padding-left: 90px;
 }
 
-.upcommingCntainer::-webkit-scrollbar {
+.Container::-webkit-scrollbar {
   display: none;
 }
 
-.soon-movie-card {
-  cursor: pointer;
-  display: block;
-  position: relative;
-}
-
-.soon-img {
+.moviePoster {
   margin: 10px;
   float: left;
   position: relative;
@@ -79,9 +90,10 @@ header {
   width: auto;
   border-radius: 10px;
   transition: 300ms;
+  cursor: pointer;
 }
 
-.soon-img:hover {
+.moviePoster:hover {
   transform: scale(1.2);
   z-index: 999;
   box-shadow: 0 0 20px rgb(0, 0, 0, 0.5);
@@ -102,154 +114,4 @@ header {
   border: 1px solid white;
   color: white;
   line-height: 120%;
-}
-
-/* 이미지 캐러셀*/
-#banner {
-  width: auto;
-  overflow: hidden;
-  margin: 0 auto 80px;
-  position: relative;
-  /* min-width: 1240px;
-    max-width: 3840px; */
-  /* min-height: 400px; */
-  /* background-color: aquamarine; */
-  height: 600px;
-}
-
-/* 페이지네이션 */
-.main01-nav {
-  display: table;
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  /* background-color: blue; */
-  z-index: 999;
-}
-
-/* .main01-nav button[class^="btn"] {
-    display: table-cell;
-    width: 34px;
-    height: 34px;
-    vertical-align: middle;
-} */
-
-.banner > .swiper-pagination {
-  display: table-cell;
-  position: static;
-  width: auto;
-  font-size: 0;
-  vertical-align: middle;
-}
-
-.swiper-pagination {
-  position: absolute;
-  text-align: center;
-  transition: opacity 0.3s;
-  transform: translateZ(0);
-  z-index: 10;
-}
-
-.swiper-pagination > span {
-  width: 10px;
-  height: 10px;
-  background-color: hsla(0, 0%, 100%, 0.3);
-  opacity: 1;
-}
-
-/* .swiper-pagination-bullet {
-    background: #e8e8e8;
-} */
-
-.swiper-pagination-bullet {
-  width: 10px;
-  height: 10px;
-  display: inline-block;
-  border-radius: 100%;
-  background: #606060;
-  opacity: 1;
-  cursor: pointer;
-  margin: 0 4px;
-}
-
-.swiper-pagination-bullet:hover {
-  background: #fff;
-  opacity: 1;
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-  position: absolute;
-  top: 50%;
-  z-index: 50;
-  cursor: pointer;
-  background-position: 50%;
-  background-repeat: no-repeat;
-}
-
-.swiper-button-next {
-  right: 0;
-  /* background: url(../images/arrow_forward_ios.png); */
-}
-
-.swiper-slide {
-  transform: translateX(0);
-}
-
-.swiper-wrapper-banner {
-  transform: translateX(190px);
-  /* transform: translateX(0); */
-}
-
-.swiper-slide {
-  display: center;
-  align-items: center;
-  justify-content: center;
-}
-.swiper-slide > img {
-  width: 100%;
-  object-fit: cover;
-  position: absolute;
-}
-
-.swiper-wrapper-banner {
-  /* position: relative; */
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  display: flex;
-  transition-property: transform;
-  box-sizing: content-box;
-  transition: 0.3s ease-in-out;
-}
-
-.swiper-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  display: flex;
-  transition-property: transform;
-  box-sizing: content-box;
-  transition: transform 0.3s ease;
-}
-
-.swiper-slide {
-  float: left;
-  position: relative;
-  overflow: hidden;
-  width: 1240px;
-  height: 508px;
-  margin: 0 10px;
-  border-radius: 12px;
-}
-
-.swiper-slide {
-  flex-shrink: 0;
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transition-property: transform;
 }
